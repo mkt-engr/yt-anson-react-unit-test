@@ -17,8 +17,27 @@ describe("Home Page - Rendering", () => {
   });
 
   //テキストエリアがあることのテスト
-  it("テキストエリアがあること", () => {
+  it("Enter Random Textのラベルがあるテキストエリアがあること", () => {
     render(<Home />);
-    expect(screen.getByRole("textbox")).toBeInTheDocument();
+    // expect(screen.getByRole("textbox")).toBeInTheDocument();
+    expect(screen.getByLabelText(/Enter Random Text/)).toBeInTheDocument();
+  });
+
+  it("Enter Specific Textのラベルがあるテキストエリアがあること", () => {
+    render(<Home />);
+    // expect(screen.getByRole("textbox")).toBeInTheDocument();
+    expect(screen.getByLabelText(/Specific/)).toBeInTheDocument();
+  });
+
+  it("Search...というプレースホルダーがあるテキストエリアがあること", () => {
+    render(<Home />);
+    // expect(screen.getByRole("textbox")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/Search/)).toBeInTheDocument();
+  });
+
+  it("AUDI Q5という文字列があるテキストエリアがあること", () => {
+    render(<Home />);
+    // expect(screen.getByRole("textbox")).toBeInTheDocument();
+    expect(screen.getByDisplayValue(/AUDI Q5/)).toBeInTheDocument();
   });
 });
