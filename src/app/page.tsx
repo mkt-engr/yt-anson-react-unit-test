@@ -1,4 +1,8 @@
+"use client";
+import { useState } from "react";
+
 export default function Home() {
+  const [showText, setShowText] = useState(false);
   return (
     <main>
       <h1>Home Page</h1>
@@ -7,11 +11,11 @@ export default function Home() {
         <label htmlFor="randomText">
           Enter Random Text:
           <input type="text" id="randomText" />
-          Enter Specific Text:
         </label>
       </div>
       <div className="">
-        <label htmlFor="specific">
+        <label htmlFor="specificText">
+          Enter Specific Text:
           <input type="text" id="specificText" />
         </label>
       </div>
@@ -22,6 +26,16 @@ export default function Home() {
       <div className="">
         <input type="text" value="AUDI Q5" onChange={() => {}} />
       </div>
+      <button
+        onClick={() => {
+          setTimeout(() => {
+            setShowText((prev) => !prev);
+          }, 1100);
+        }}
+      >
+        Show text
+      </button>
+      {showText && <span>This is the text</span>}
     </main>
   );
 }
