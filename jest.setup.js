@@ -4,12 +4,15 @@
 //下のimportに切り替えるとエラーがなくなった。v6でBreaking Changeがあったみたい
 import "@testing-library/jest-dom";
 import { server } from "./mocks/server";
+// import "whatwg-fetch";
+
 beforeAll(() => {
   server.listen();
 });
 
 beforeEach(() => {});
 afterEach(() => {
+  //UserList.test.tsx内のテストでserver.useを用いてレスポンスをモックしたものをリセットする
   server.resetHandlers();
 });
 

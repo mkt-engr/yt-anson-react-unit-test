@@ -1,4 +1,5 @@
 "use client";
+import { UserList } from "@/components/UserList";
 import { UserProfile } from "@/components/UserProfile";
 import { useState } from "react";
 
@@ -43,6 +44,7 @@ export default function Home() {
         email="makito@example.com"
         isEmailVerified={false}
       />
+      <UserList />
     </main>
   );
 }

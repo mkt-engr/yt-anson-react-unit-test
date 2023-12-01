@@ -14,6 +14,10 @@ const config: Config = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   testEnvironment: "jest-environment-jsdom",
   preset: "ts-jest", //JestはTypeScriptのテストを実行するための設定を自動的に処理できる
+  testEnvironmentOptions: {
+    customExportConditions: [""],
+  },
+  setupFiles: ["./jest.polyfills.js"],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
