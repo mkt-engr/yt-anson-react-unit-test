@@ -18,7 +18,7 @@ describe("UserList - Rendering", () => {
   it("mikeというユーザーが表示されること", async () => {
     server.use(
       http.get(
-        "https://localhost:3000/api/users",
+        "http://localhost:3000/api/users",
         ({ request, params, cookies }) => {
           return HttpResponse.json([{ id: 2, username: "mike" }]);
         }

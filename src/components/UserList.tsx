@@ -8,7 +8,7 @@ type User = {
 export const UserList = () => {
   const [users, setUsers] = useState<User[]>([]);
   useEffect(() => {
-    fetch("https://localhost:3000/api/users")
+    fetch("http://localhost:3000/api/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
