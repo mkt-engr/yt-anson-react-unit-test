@@ -2,7 +2,7 @@ import Home from "@/app/page";
 import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-describe("Home Page - Rendering", () => {
+describe("Home Page", () => {
   describe("Rendering", () => {
     it("ホームページのテキストがあること", () => {
       render(<Home />);
